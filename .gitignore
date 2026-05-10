@@ -26,6 +26,11 @@ pnpm-debug.log*
 coverage/
 .wrangler/
 
+# loose screenshots dropped into the repo root (public/ images still tracked)
+/*.png
+/*.jpg
+/*.jpeg
+
 # macOS-specific files
 .DS_Store
 
