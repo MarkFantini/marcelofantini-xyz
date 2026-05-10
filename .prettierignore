@@ -3,3 +3,6 @@ dist/
 node_modules/
 pnpm-lock.yaml
 coverage/
+
+# Vendor reference docs (PostHog wizard's Claude skill) — don't reformat
+.claude/skills/
