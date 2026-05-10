@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import PostHog from '../components/posthog.astro';
 ---
 
 <html lang="en">
@@ -10,8 +11,14 @@ import '../styles/global.css';
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <PostHog />
   </head>
   <body>
     <h1>Astro</h1>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function () {
+        window.posthog?.capture('home_page_viewed');
+      });
+    </script>
   </body>
 </html>
