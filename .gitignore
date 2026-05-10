@@ -24,6 +24,7 @@ pnpm-debug.log*
 # misc
 .cache/
 coverage/
+.wrangler/
 
 # macOS-specific files
 .DS_Store

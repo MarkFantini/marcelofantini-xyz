@@ -13,7 +13,9 @@
     "typecheck": "astro check",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "deploy": "wrangler deploy",
+    "preview:remote": "wrangler dev"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
@@ -37,6 +39,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.59.2"
+    "typescript-eslint": "^8.59.2",
+    "wrangler": "^4.90.0"
   }
 }
