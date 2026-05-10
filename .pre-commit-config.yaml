@@ -1,0 +1,32 @@
+# Run on staged files before commit. Install with: pre-commit install
+# Update hook versions with: pre-commit autoupdate
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: \.md$
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=500]
+
+  - repo: local
+    hooks:
+      - id: prettier
+        name: prettier
+        entry: mise exec -- pnpm exec prettier --write --ignore-unknown
+        language: system
+        types_or: [javascript, jsx, ts, tsx, json, json5, css, html, markdown, yaml, astro]
+      - id: eslint
+        name: eslint
+        entry: mise exec -- pnpm exec eslint --fix
+        language: system
+        files: \.(js|jsx|ts|tsx|astro)$
